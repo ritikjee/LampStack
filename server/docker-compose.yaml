@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  user_db:
+    image: mysql:8.3.0
+    container_name: user_db
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    ports:
+      - "3316:3306"
+    volumes:
+      - ./docker/mysql/data/user_db:/var/lib/mysql
+      - ./docker/mysql/user_db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-network
+
+  app_db:
+    image: mysql:8.3.0
+    container_name: app_db
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    ports:
+      - "3317:3306"
+    volumes:
+      - ./docker/mysql/data/app_db:/var/lib/mysql
+      - ./docker/mysql/app_db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  user_db:
+  app_db:
