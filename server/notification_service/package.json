@@ -1,0 +1,15 @@
+{
+  "name": "notification_service",
+  "version": "1.0.0",
+  "description": "This is notification service use for sending auth mail and other mail for otps and welcome emails",
+  "main": "dist/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "SpringBoot",
+    "Microservice"
+  ],
+  "author": "Ritik Jha",
+  "license": "ISC"
+}
