@@ -4,12 +4,19 @@
   "description": "This is notification service use for sending auth mail and other mail for otps and welcome emails",
   "main": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon",
+    "build": "npx tsc",
+    "start": "node dist/server.js"
   },
   "keywords": [
     "SpringBoot",
+    "typescript",
     "Microservice"
   ],
   "author": "Ritik Jha",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "express": "^4.21.1"
+  }
 }
